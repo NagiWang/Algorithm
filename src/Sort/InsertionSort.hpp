@@ -3,6 +3,12 @@
 
 __ALGO__BEGIN__
 
+/*
+ * Insertion Sort
+ * Best    : O ( n^2 )
+ * Average : O ( n^2 )
+ * Worst   : O ( n^2 )
+ */
 template <typename T>
 std::vector<T> &insertionSort(std::vector<T> &array, int g = 1)
 {

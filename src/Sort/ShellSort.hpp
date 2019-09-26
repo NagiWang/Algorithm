@@ -4,6 +4,10 @@
 
 __ALGO__BEGIN__
 
+/*
+ * Shell Sort
+ * TODO:
+ */
 template <typename T>
 std::vector<T> &shellSort(std::vector<T> &array)
 {
