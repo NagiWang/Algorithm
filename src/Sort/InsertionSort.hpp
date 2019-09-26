@@ -1,7 +1,8 @@
 #pragma once
-#include "../Head.hpp"
+#include "../Headers.hpp"
 
 __ALGO__BEGIN__
+
 template <typename T>
 std::vector<T> &insertionSort(std::vector<T> &array, int g = 1)
 {
@@ -20,4 +21,5 @@ std::vector<T> &insertionSort(std::vector<T> &array, int g = 1)
 	}
 	return array;
 }
+
 __ALGO__END__
