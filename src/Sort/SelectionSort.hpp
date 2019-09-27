@@ -3,8 +3,16 @@
 
 __ALGO__BEGIN__
 
-template <typename T, template <typename...> typename _ARRAY_>
-_ARRAY_<T> &selectionSort(_ARRAY_<T> &array)
+/**
+ * @brief selection sort
+ * TODO:
+ * @tparam T
+ * @tparam _ArrayType
+ * @param array
+ * @return _ArrayType<T>&
+ */
+template <typename T, template <typename...> typename _ArrayType>
+_ArrayType<T> &selectionSort(_ArrayType<T> &array)
 {
 	for (int i = 0, j, minIndex; i < array.size() - 1; i++)
 	{

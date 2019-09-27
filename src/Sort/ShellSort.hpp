@@ -4,12 +4,16 @@
 
 __ALGO__BEGIN__
 
-/*
- * Shell Sort
+/**
+ * @brief
  * TODO:
+ * @tparam T
+ * @tparam _ArrayType
+ * @param array
+ * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename ARRAY_>
-ARRAY_<T> &shellSort(ARRAY_<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+_ArrayType<T> &shellSort(_ArrayType<T> &array)
 {
 	std::vector<int> G;
 	int g = 0;

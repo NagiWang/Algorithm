@@ -3,14 +3,17 @@
 
 __ALGO__BEGIN__
 
-/*
- * Insertion Sort
- * Best    : O ( n^2 )
- * Average : O ( n^2 )
- * Worst   : O ( n^2 )
+/**
+ * @brief
+ * TODO:
+ * @tparam T
+ * @tparam _ArrayType
+ * @param array
+ * @param g
+ * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename ARRAY_>
-ARRAY_<T> &insertionSort(ARRAY_<T> &array, int g = 1)
+template <typename T, template <typename...> typename _ArrayType>
+_ArrayType<T> &insertionSort(_ArrayType<T> &array, int g = 1)
 {
 	T val;
 	for (int i = g, j; i < array.size(); i++)
