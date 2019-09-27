@@ -1,5 +1,8 @@
 test/Sort_Test/sort_main.out: test/Sort_Test/main.cpp
-	g++ "$<" -std=c++17 -o "$@"
+	clang++ "$<" -std=c++17 -o "$@"
 
 clean:
-	rm -rf */*.out  */.o
+	find . -name "*.o"    | xargs rm -f
+	find . -name "*.out"  | xargs rm -f
+	find . -name "*.obj"  | xargs rm -f
+	find . -name "*.exe"  | xargs rm -f
