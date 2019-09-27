@@ -8,8 +8,8 @@ __ALGO__BEGIN__
  * Shell Sort
  * TODO:
  */
-template <typename T>
-std::vector<T> &shellSort(std::vector<T> &array)
+template <typename T, template <typename...> typename ARRAY_>
+ARRAY_<T> &shellSort(ARRAY_<T> &array)
 {
 	std::vector<int> G;
 	int g = 0;

@@ -9,12 +9,11 @@ __ALGO__BEGIN__
  * Average : O ( n^2 )
  * Worst   : O ( n^2 )
  */
-template <typename T>
-std::vector<T> &insertionSort(std::vector<T> &array, int g = 1)
+template <typename T, template <typename...> typename ARRAY_>
+ARRAY_<T> &insertionSort(ARRAY_<T> &array, int g = 1)
 {
 	T val;
-	int j;
-	for (int i = g; i < array.size(); i++)
+	for (int i = g, j; i < array.size(); i++)
 	{
 		val = array[i];
 		j = i - g;

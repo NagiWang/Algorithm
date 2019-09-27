@@ -12,18 +12,28 @@ void array_print(const T &array)
 
 int main()
 {
-	std::vector<int> arr{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, 2, -3, 4, -5, 6, -7, 8, -9, 10};
+	std::vector<int> arr{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0,
+						-1, 2, -3, 4, -5, 6, -7, 8, -9, 10};
 
-	// * InsertionSort Test
+	//* Insertion Sort Test
 	std::cout << "\nInsertion Sort :" << std::endl;
 	array_print(arr);
 	alg::insertionSort(arr);
 	array_print(arr);
 
-	// * Reverse Arr
-	std::reverse(std::begin(arr), std::end(arr));
+	//* Random Shuffle Arr
+	std::random_shuffle(std::begin(arr), std::end(arr));
 
-	// * ShellSort Test
+	//* Selection Sort Test
+	std::cout << "\nSelection Sort :" << std::endl;
+	array_print(arr);
+	alg::selectionSort(arr);
+	array_print(arr);
+
+	//* Random Shuffle Arr
+	std::random_shuffle(std::begin(arr), std::end(arr));
+
+	//* Shell Sort Test
 	std::cout << "\nShell Sort :" << std::endl;
 	array_print(arr);
 	alg::shellSort(arr);
