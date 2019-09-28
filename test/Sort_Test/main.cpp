@@ -23,6 +23,14 @@ int main()
 	alg::bubbleSort(arr);
 	array_print(arr);
 
+	//* Comb Sort Test
+	//* Random Shuffle Arr
+	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::cout << "\nComb Sort :" << std::endl;
+	array_print(arr);
+	alg::combSort(arr);
+	array_print(arr);
+
 	//* Insertion Sort Test
 	//* Random Shuffle Arr
 	std::random_shuffle(std::begin(arr), std::end(arr));

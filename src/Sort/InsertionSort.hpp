@@ -15,17 +15,17 @@ __ALGO__BEGIN__
 template <typename T, template <typename...> typename _ArrayType>
 _ArrayType<T> &insertionSort(_ArrayType<T> &array, int g = 1)
 {
-	T val;
+	T temp;
 	for (int i = g, j; i < array.size(); i++)
 	{
-		val = array[i];
+		temp = array[i];
 		j = i - g;
-		while (j >= 0 and val < array[j])
+		while (j >= 0 and temp < array[j])
 		{
 			std::swap(array[j + g], array[j]);
 			j -= g;
 		}
-		array[j + g] = val;
+		array[j + g] = temp;
 	}
 	return array;
 }
