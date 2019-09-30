@@ -1,4 +1,5 @@
 #include "../../Algorithm.hpp"
+#include <iostream>
 
 template <typename T>
 void array_print(const T &array)

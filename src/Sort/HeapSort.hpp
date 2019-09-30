@@ -4,11 +4,19 @@
 
 __ALGO__BEGIN__
 
+/**
+ * @brief
+ *
+ * @tparam T
+ * @tparam _ArrayType
+ * @param array
+ * @return _ArrayType<T>&
+ */
 template <typename T, template <typename...> typename _ArrayType>
 _ArrayType<T> &heap_sort(_ArrayType<T> &array)
 {
-	for (int i = (array.size() >> 1) - 1; i >= 0; --i)
-		move_down(array, i, array.size() - 1);
+	make_heap(array);
+
 	for (int i = array.size() - 1; i >= 1; --i)
 	{
 		std::swap(array[0], array[i]);

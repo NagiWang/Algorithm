@@ -3,21 +3,22 @@ all:BUILD \
     build/sort_main.out \
 	build/heap_main.out
 
+CC=clang++-8
 
 BUILD:
 	mkdir build
 
 
 Algorithm: Algorithm.hpp
-	clang++ -c Algorithm.hpp -std=c++17
+	$(CC) -c Algorithm.hpp -std=c++17
 
 
 build/sort_main.out: test/Sort_test/main.cpp
-	clang++ "$<" -std=c++17 -o "$@"
+	$(CC) "$<" -std=c++17 -o "$@"
 
 
 build/heap_main.out: test/Heap_test/main.cpp
-	clang++ "$<" -std=c++17 -o "$@"
+	$(CC) "$<" -std=c++17 -o "$@"
 
 
 clean:
