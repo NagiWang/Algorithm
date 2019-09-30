@@ -20,7 +20,7 @@ int main()
 	std::random_shuffle(std::begin(arr), std::end(arr));
 	std::cout << "\nBubble Sort :" << std::endl;
 	array_print(arr);
-	alg::bubbleSort(arr);
+	alg::bubble_sort(arr);
 	array_print(arr);
 
 	//* Comb Sort Test
@@ -28,7 +28,15 @@ int main()
 	std::random_shuffle(std::begin(arr), std::end(arr));
 	std::cout << "\nComb Sort :" << std::endl;
 	array_print(arr);
-	alg::combSort(arr);
+	alg::comb_sort(arr);
+	array_print(arr);
+
+	//* Heap Sort Test
+	//* Random Shuffle Arr
+	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::cout << "\nHeap Sort :" << std::endl;
+	array_print(arr);
+	alg::heap_sort(arr);
 	array_print(arr);
 
 	//* Insertion Sort Test
@@ -36,7 +44,7 @@ int main()
 	std::random_shuffle(std::begin(arr), std::end(arr));
 	std::cout << "\nInsertion Sort :" << std::endl;
 	array_print(arr);
-	alg::insertionSort(arr);
+	alg::insertion_sort(arr);
 	array_print(arr);
 
 	//* Selection Sort Test
@@ -44,7 +52,7 @@ int main()
 	std::random_shuffle(std::begin(arr), std::end(arr));
 	std::cout << "\nSelection Sort :" << std::endl;
 	array_print(arr);
-	alg::selectionSort(arr);
+	alg::selection_sort(arr);
 	array_print(arr);
 
 	//* Shell Sort Test
@@ -52,7 +60,7 @@ int main()
 	std::random_shuffle(std::begin(arr), std::end(arr));
 	std::cout << "\nShell Sort :" << std::endl;
 	array_print(arr);
-	alg::shellSort(arr);
+	alg::shell_sort(arr);
 	array_print(arr);
 
 	return 0;

@@ -13,7 +13,7 @@ __ALGO__BEGIN__
  * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &shellSort(_ArrayType<T> &array)
+_ArrayType<T> &shell_sort(_ArrayType<T> &array)
 {
 	std::vector<int> G;
 	int g = 0;
@@ -24,7 +24,7 @@ _ArrayType<T> &shellSort(_ArrayType<T> &array)
 	}
 	for (int i = array.size() - 1; i >= 0; i--)
 	{
-		alg::insertionSort(array, G[i]);
+		insertion_sort(array, G[i]);
 	}
 	return array;
 }

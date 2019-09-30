@@ -1,6 +1,7 @@
 all:BUILD \
 	Algorithm \
-    build/sort_main.out
+    build/sort_main.out \
+	build/heap_main.out
 
 
 BUILD:
@@ -11,9 +12,12 @@ Algorithm: Algorithm.hpp
 	clang++ -c Algorithm.hpp -std=c++17
 
 
-build/sort_main.out: test/Sort_Test/main.cpp
+build/sort_main.out: test/Sort_test/main.cpp
 	clang++ "$<" -std=c++17 -o "$@"
 
+
+build/heap_main.out: test/Heap_test/main.cpp
+	clang++ "$<" -std=c++17 -o "$@"
 
 
 clean:

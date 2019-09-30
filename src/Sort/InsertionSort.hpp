@@ -13,7 +13,7 @@ __ALGO__BEGIN__
  * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &insertionSort(_ArrayType<T> &array, int g = 1)
+_ArrayType<T> &insertion_sort(_ArrayType<T> &array, int g = 1)
 {
 	T temp;
 	for (int i = g, j; i < array.size(); i++)

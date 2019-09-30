@@ -12,7 +12,7 @@ __ALGO__BEGIN__
  * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &selectionSort(_ArrayType<T> &array)
+_ArrayType<T> &selection_sort(_ArrayType<T> &array)
 {
 	if (array.empty())
 		return array;

@@ -13,7 +13,7 @@ __ALGO__BEGIN__
  * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &combSort(_ArrayType<T> &array)
+_ArrayType<T> &comb_sort(_ArrayType<T> &array)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)
@@ -25,7 +25,7 @@ _ArrayType<T> &combSort(_ArrayType<T> &array)
 				std::swap(array[j], array[k]);
 		}
 	}
-	return alg::bubbleSort(array);
+	return bubble_sort(array);
 }
 
 __ALGO__END__

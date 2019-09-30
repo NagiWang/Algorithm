@@ -12,7 +12,7 @@ __ALGO__BEGIN__
  * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &bubbleSort(_ArrayType<T> &array, int g = 1)
+_ArrayType<T> &bubble_sort(_ArrayType<T> &array, int g = 1)
 {
 	bool flag = false;
 	while (!flag)
