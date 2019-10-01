@@ -11,8 +11,8 @@ __ALGO__BEGIN__
  * @param array
  * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &selection_sort(_ArrayType<T> &array)
+template <typename T, template <typename...> typename __ArrayType>
+__ArrayType<T> &selection_sort(__ArrayType<T> &array)
 {
 	if (array.empty())
 		return array;

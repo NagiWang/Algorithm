@@ -11,8 +11,8 @@ __ALGO__BEGIN__
  * @param array
  * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &bubble_sort(_ArrayType<T> &array, int g = 1)
+template <typename T, template <typename...> typename __ArrayType>
+__ArrayType<T> &bubble_sort(__ArrayType<T> &array, int g = 1)
 {
 	bool flag = false;
 	while (!flag)

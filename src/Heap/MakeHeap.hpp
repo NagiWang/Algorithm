@@ -12,8 +12,8 @@ __ALGO__BEGIN__
  * @param low
  * @param high
  */
-template <typename T, template <typename...> typename _ArrayType>
-void move_down(_ArrayType<T> &array, int low, int high)
+template <typename T, template <typename...> typename __ArrayType>
+void move_down(__ArrayType<T> &array, int low, int high)
 {
 	int largest = (low << 1) + 1;
 	while (largest <= high)
@@ -39,8 +39,8 @@ void move_down(_ArrayType<T> &array, int low, int high)
  * @param array
  * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &make_heap(_ArrayType<T> &array)
+template <typename T, template <typename...> typename __ArrayType>
+__ArrayType<T> &make_heap(__ArrayType<T> &array)
 {
 	for (int i = (array.size() >> 1) - 1; i >= 0; --i)
 		move_down(array, i, array.size() - 1);

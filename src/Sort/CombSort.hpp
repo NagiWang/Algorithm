@@ -12,8 +12,8 @@ __ALGO__BEGIN__
  * @param array
  * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &comb_sort(_ArrayType<T> &array)
+template <typename T, template <typename...> typename __ArrayType>
+__ArrayType<T> &comb_sort(__ArrayType<T> &array)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)

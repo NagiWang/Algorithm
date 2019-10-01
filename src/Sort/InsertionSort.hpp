@@ -12,8 +12,8 @@ __ALGO__BEGIN__
  * @param g
  * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename _ArrayType>
-_ArrayType<T> &insertion_sort(_ArrayType<T> &array, int g = 1)
+template <typename T, template <typename...> typename __ArrayType>
+__ArrayType<T> &insertion_sort(__ArrayType<T> &array, int g = 1)
 {
 	T temp;
 	for (int i = g, j; i < array.size(); i++)
