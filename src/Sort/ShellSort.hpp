@@ -26,7 +26,7 @@ void shell_sort(__ArrayType<T> &array)
 	while (Sedgewick[len] < array.size())
 		++len;
 
-	for (int i = len; i >= 0; --i)
+	for (int i = len - 1; i >= 0; --i)
 		insertion_sort(array, Sedgewick[i]);
 }
 

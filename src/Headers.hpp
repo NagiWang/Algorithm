@@ -41,7 +41,7 @@ int Randint()
 template <typename T>
 void array_print(const T &array)
 {
-	if constexpr (0)
+	if constexpr (1)
 	{
 		if (array.size() > 30)
 		{
