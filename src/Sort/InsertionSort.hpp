@@ -15,17 +15,16 @@ template <typename T, template <typename...> typename __ArrayType>
 void insertion_sort(__ArrayType<T> &array, int g = 1)
 {
 	T temp;
-	for (int i = g, j; i < array.size(); i++)
-	{
-		temp = array[i];
-		j = i - g;
-		while (j >= 0 and temp < array[j])
+	for (int k = g; k < (g << 1) ; ++k)
+		for (int i = k, j; i < array.size();)
 		{
-			std::swap(array[j + g], array[j]);
-			j -= g;
+			temp = array[i];
+			for (j = i; j - g >= 0 and temp < array[j - g]; j -= g)
+				array[j] = array[j - g];
+
+			array[j] = temp;
+			i += g;
 		}
-		array[j + g] = temp;
-	}
 }
 
 __ALG__END__

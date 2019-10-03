@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <array>
+#include <chrono>
 #include <ctime>
 #include <iostream>
 #include <memory>
@@ -40,11 +41,20 @@ int Randint()
 template <typename T>
 void array_print(const T &array)
 {
-	for (auto val : array)
+	if constexpr (0)
 	{
-		std::cout << val << " ";
+		if (array.size() > 30)
+		{
+			for (int i = 0; i < 30; ++i)
+				std::cout << array[i] << " ";
+			std::cout << std::endl;
+			return;
+		}
+
+		for (auto val : array)
+			std::cout << val << " ";
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 }
 
 __ALG__END__
