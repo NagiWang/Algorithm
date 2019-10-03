@@ -21,9 +21,7 @@ void selection_sort(__ArrayType<T> &array)
 		for (j = i + 1, minIndex = i; j < array.size(); ++j)
 		{
 			if (array[j] < array[minIndex])
-			{
 				minIndex = j;
-			}
 		}
 		std::swap(array[i], array[minIndex]);
 	}

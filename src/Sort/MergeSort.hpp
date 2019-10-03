@@ -2,6 +2,7 @@
 #include "../Headers.hpp"
 
 __ALG__BEGIN__
+
 template <typename T, template <typename...> typename __ArrayType>
 void merge(__ArrayType<T> &array, const int first, const int last)
 {
