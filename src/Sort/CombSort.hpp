@@ -2,18 +2,17 @@
 #include "../Headers.hpp"
 #include "BubbleSort.hpp"
 
-__ALGO__BEGIN__
+__ALG__BEGIN__
 
 /**
  * @brief
- * TODO:
+ *
  * @tparam T
- * @tparam _ArrayType
+ * @tparam __ArrayType
  * @param array
- * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename __ArrayType>
-__ArrayType<T> &comb_sort(__ArrayType<T> &array)
+void comb_sort(__ArrayType<T> &array)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)
@@ -25,7 +24,7 @@ __ArrayType<T> &comb_sort(__ArrayType<T> &array)
 				std::swap(array[j], array[k]);
 		}
 	}
-	return bubble_sort(array);
+	bubble_sort(array);
 }
 
-__ALGO__END__
+__ALG__END__

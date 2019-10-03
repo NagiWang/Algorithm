@@ -3,5 +3,6 @@
 #include "Sort/CombSort.hpp"
 #include "Sort/HeapSort.hpp"
 #include "Sort/InsertionSort.hpp"
+#include "Sort/QuickSort.hpp"
 #include "Sort/SelectionSort.hpp"
 #include "Sort/ShellSort.hpp"

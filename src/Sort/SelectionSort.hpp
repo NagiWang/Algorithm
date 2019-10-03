@@ -1,21 +1,20 @@
 #pragma once
 #include "../Headers.hpp"
 
-__ALGO__BEGIN__
+__ALG__BEGIN__
 
 /**
- * @brief selection sort
- * TODO:
+ * @brief
+ *
  * @tparam T
- * @tparam _ArrayType
+ * @tparam __ArrayType
  * @param array
- * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename __ArrayType>
-__ArrayType<T> &selection_sort(__ArrayType<T> &array)
+void selection_sort(__ArrayType<T> &array)
 {
 	if (array.empty())
-		return array;
+		return;
 
 	for (int i = 0, j, minIndex; i < array.size() - 1; i++)
 	{
@@ -28,7 +27,6 @@ __ArrayType<T> &selection_sort(__ArrayType<T> &array)
 		}
 		std::swap(array[i], array[minIndex]);
 	}
-	return array;
 }
 
-__ALGO__END__
+__ALG__END__

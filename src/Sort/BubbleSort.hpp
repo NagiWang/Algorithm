@@ -1,18 +1,11 @@
 #pragma once
 #include "../Headers.hpp"
 
-__ALGO__BEGIN__
+__ALG__BEGIN__
 
-/**
- * @brief bubble sort
- * TODO:
- * @tparam T
- * @tparam _ArrayType
- * @param array
- * @return _ArrayType<T>&
- */
+
 template <typename T, template <typename...> typename __ArrayType>
-__ArrayType<T> &bubble_sort(__ArrayType<T> &array, int g = 1)
+void bubble_sort(__ArrayType<T> &array, int g = 1)
 {
 	bool flag = false;
 	while (!flag)
@@ -27,7 +20,6 @@ __ArrayType<T> &bubble_sort(__ArrayType<T> &array, int g = 1)
 			}
 		}
 	}
-	return array;
 }
 
-__ALGO__END__
+__ALG__END__

@@ -1,19 +1,18 @@
 #pragma once
 #include "../Headers.hpp"
 
-__ALGO__BEGIN__
+__ALG__BEGIN__
 
 /**
  * @brief
- * TODO:
+ *
  * @tparam T
- * @tparam _ArrayType
+ * @tparam __ArrayType
  * @param array
  * @param g
- * @return _ArrayType<T>&
  */
 template <typename T, template <typename...> typename __ArrayType>
-__ArrayType<T> &insertion_sort(__ArrayType<T> &array, int g = 1)
+void insertion_sort(__ArrayType<T> &array, int g = 1)
 {
 	T temp;
 	for (int i = g, j; i < array.size(); i++)
@@ -27,7 +26,6 @@ __ArrayType<T> &insertion_sort(__ArrayType<T> &array, int g = 1)
 		}
 		array[j + g] = temp;
 	}
-	return array;
 }
 
-__ALGO__END__
+__ALG__END__
