@@ -1,9 +1,10 @@
 all:BUILD \
 	Algorithm \
     build/sort_main.out \
-	build/heap_main.out
+	build/heap_main.out \
+	build/queue_main.out
 
-CC=clang++-8
+CC=clang++
 
 BUILD:
 	mkdir build
@@ -20,6 +21,8 @@ build/sort_main.out: test/Sort_test/main.cpp
 build/heap_main.out: test/Heap_test/main.cpp
 	$(CC) "$<" -std=c++17 -o "$@"
 
+build/queue_main.out: test/Queue_test/main.cpp
+	$(CC) "$<" -std=c++17 -o "$@"
 
 clean:
 	rm -rf build
