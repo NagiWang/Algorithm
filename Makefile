@@ -5,6 +5,8 @@ all:BUILD \
 	build/queue_main.out
 
 CC=clang++-8
+OO=-O3
+STD=-std=c++17
 
 BUILD:
 	mkdir build
@@ -15,14 +17,14 @@ Algorithm: Algorithm.hpp
 
 
 build/sort_main.out: test/Sort_test/main.cpp
-	$(CC) "$<" -std=c++17 -o "$@"
+	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 
 build/heap_main.out: test/Heap_test/main.cpp
-	$(CC) "$<" -std=c++17 -o "$@"
+	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 build/queue_main.out: test/Queue_test/main.cpp
-	$(CC) "$<" -std=c++17 -o "$@"
+	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 clean:
 	rm -rf build

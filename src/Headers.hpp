@@ -67,7 +67,7 @@ int Randint()
 template <typename T>
 void array_print(const T &array)
 {
-	if constexpr (1)
+	if constexpr (0)
 	{
 		if (array.size() > 30)
 		{
@@ -91,6 +91,6 @@ void array_print(const T &array)
  * @tparam T
  */
 template <typename T>
-constexpr auto f_return_itself_value = [](T &value) -> T & { return value; };
+constexpr auto f_return_itself_value = [](const T &value) -> const T & { return value; };
 
 __ALG__END__

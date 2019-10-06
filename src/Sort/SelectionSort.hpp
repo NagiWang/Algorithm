@@ -10,8 +10,8 @@ __ALG__BEGIN__
  * @tparam _ArrayType
  * @param array
  */
-template <typename T, template <typename...> typename _ArrayType>
-void selection_sort(_ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType, typename _Fn>
+void selection_sort(_ArrayType<T> &array, _Fn func)
 {
 	if (array.empty())
 		return;
@@ -20,11 +20,17 @@ void selection_sort(_ArrayType<T> &array)
 	{
 		for (j = i + 1, minIndex = i; j < array.size(); ++j)
 		{
-			if (array[j] < array[minIndex])
+			if (func(array[j]) < func(array[minIndex]))
 				minIndex = j;
 		}
 		std::swap(array[i], array[minIndex]);
 	}
+}
+
+template <typename T, template <typename...> typename _ArrayType>
+inline void selection_sort(_ArrayType<T> &array)
+{
+	selection_sort(array, f_return_itself_value<T>);
 }
 
 __ALG__END__
