@@ -3,8 +3,8 @@
 
 __ALG__BEGIN__
 
-template <typename T, template <typename...> typename __ArrayType>
-inline int three_mid(const __ArrayType<T> &array, int first, int last)
+template <typename T, template <typename...> typename _ArrayType>
+inline int three_mid(const _ArrayType<T> &array, int first, int last)
 {
 	if (first >= last)
 		return first;
@@ -30,14 +30,14 @@ inline int three_mid(const __ArrayType<T> &array, int first, int last)
 	}
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-inline int three_mid(const __ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+inline int three_mid(const _ArrayType<T> &array)
 {
 	return three_mid(array, 0, array.size() - 1);
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-int partition(__ArrayType<T> &array, int first, int last)
+template <typename T, template <typename...> typename _ArrayType>
+int partition(_ArrayType<T> &array, int first, int last)
 {
 	if (first >= last)
 		return -1;
@@ -66,14 +66,14 @@ int partition(__ArrayType<T> &array, int first, int last)
 	return l;
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-inline int partition(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+inline int partition(_ArrayType<T> &array)
 {
 	return partition(array, 0, array.size() - 1);
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-void quick_sort(__ArrayType<T> &array, int low, int high)
+template <typename T, template <typename...> typename _ArrayType>
+void quick_sort(_ArrayType<T> &array, int low, int high)
 {
 	if (low >= high)
 		return;
@@ -89,8 +89,8 @@ void quick_sort(__ArrayType<T> &array, int low, int high)
 	}
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-void quick_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void quick_sort(_ArrayType<T> &array)
 {
 	quick_sort(array, 0, array.size() - 1);
 }

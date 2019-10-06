@@ -7,11 +7,11 @@ __ALG__BEGIN__
  * @brief
  *
  * @tparam T
- * @tparam __ArrayType
+ * @tparam _ArrayType
  * @param array
  */
-template <typename T, template <typename...> typename __ArrayType>
-void selection_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void selection_sort(_ArrayType<T> &array)
 {
 	if (array.empty())
 		return;

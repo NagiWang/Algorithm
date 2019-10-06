@@ -4,8 +4,8 @@
 __ALG__BEGIN__
 
 
-template <typename T, template <typename...> typename __ArrayType>
-void bubble_sort(__ArrayType<T> &array, int g = 1)
+template <typename T, template <typename...> typename _ArrayType>
+void bubble_sort(_ArrayType<T> &array, int g = 1)
 {
 	bool flag = false;
 	while (!flag)

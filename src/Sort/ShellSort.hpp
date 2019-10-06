@@ -8,12 +8,12 @@ __ALG__BEGIN__
  * @brief
  *
  * @tparam T
- * @tparam __ArrayType
+ * @tparam _ArrayType
  * @param array
- * @return __ArrayType<T>&
+ * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename __ArrayType>
-void shell_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void shell_sort(_ArrayType<T> &array)
 {
 	static unsigned long long Sedgewick[] =
 		{1, 5, 19, 41, 109,

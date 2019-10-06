@@ -3,8 +3,8 @@
 
 __ALG__BEGIN__
 
-template <typename T, template <typename...> typename __ArrayType>
-void merge(__ArrayType<T> &array, const int first, const int last)
+template <typename T, template <typename...> typename _ArrayType>
+void merge(_ArrayType<T> &array, const int first, const int last)
 {
 	if (last - first < 2)
 		return;
@@ -31,8 +31,8 @@ void merge(__ArrayType<T> &array, const int first, const int last)
 	// alg::array_print(array);
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-void merge_sort(__ArrayType<T> &array, int first, int last)
+template <typename T, template <typename...> typename _ArrayType>
+void merge_sort(_ArrayType<T> &array, int first, int last)
 {
 	if (last - first > 1)
 	{
@@ -43,8 +43,8 @@ void merge_sort(__ArrayType<T> &array, int first, int last)
 	}
 }
 
-template <typename T, template <typename...> typename __ArrayType>
-void merge_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void merge_sort(_ArrayType<T> &array)
 {
 	merge_sort(array, 0, array.size());
 }

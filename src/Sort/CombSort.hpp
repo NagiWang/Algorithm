@@ -8,11 +8,11 @@ __ALG__BEGIN__
  * @brief
  *
  * @tparam T
- * @tparam __ArrayType
+ * @tparam _ArrayType
  * @param array
  */
-template <typename T, template <typename...> typename __ArrayType>
-void comb_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void comb_sort(_ArrayType<T> &array)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)

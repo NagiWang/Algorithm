@@ -8,12 +8,12 @@ __ALG__BEGIN__
  * @brief
  *
  * @tparam T
- * @tparam __ArrayType
+ * @tparam _ArrayType
  * @param array
- * @return __ArrayType<T>&
+ * @return _ArrayType<T>&
  */
-template <typename T, template <typename...> typename __ArrayType>
-void heap_sort(__ArrayType<T> &array)
+template <typename T, template <typename...> typename _ArrayType>
+void heap_sort(_ArrayType<T> &array)
 {
 	make_heap(array);
 

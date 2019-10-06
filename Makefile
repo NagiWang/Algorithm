@@ -4,7 +4,7 @@ all:BUILD \
 	build/heap_main.out \
 	build/queue_main.out
 
-CC=clang++
+CC=clang++-8
 
 BUILD:
 	mkdir build

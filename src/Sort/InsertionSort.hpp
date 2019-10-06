@@ -7,12 +7,12 @@ __ALG__BEGIN__
  * @brief
  *
  * @tparam T
- * @tparam __ArrayType
+ * @tparam _ArrayType
  * @param array
  * @param g
  */
-template <typename T, template <typename...> typename __ArrayType>
-void insertion_sort(__ArrayType<T> &array, int g = 1)
+template <typename T, template <typename...> typename _ArrayType>
+void insertion_sort(_ArrayType<T> &array, int g = 1)
 {
 	T temp;
 	for (int k = g; k < (g << 1) ; ++k)
