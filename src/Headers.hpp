@@ -26,6 +26,11 @@
 	;
 #endif
 
+__ALG__BEGIN__
+
+// ******************************
+// ******* Console Colors *******
+// ******************************
 #define RESET "\033[0m"
 #define BLACK "\033[30m"			  /* Black */
 #define RED "\033[31m"				  /* Red */
@@ -44,8 +49,7 @@
 #define BOLDCYAN "\033[1m\033[36m"	/* Bold Cyan */
 #define BOLDWHITE "\033[1m\033[37m"   /* Bold White */
 
-__ALG__BEGIN__
-
+// * * * * * * * * * * * * * * * *
 /**
  * @brief Generate Random Number
  *
@@ -57,6 +61,9 @@ int Randint()
 	return e();
 }
 
+// ******************************
+// *** Print array to console ***
+// ******************************
 template <typename T>
 void array_print(const T &array)
 {
@@ -75,5 +82,15 @@ void array_print(const T &array)
 		std::cout << std::endl;
 	}
 }
+
+// *********************************
+// *** Fuctions for return value ***
+// *********************************
+/**
+ * @brief Return directly to its value
+ * @tparam T
+ */
+template <typename T>
+constexpr auto f_return_itself_value = [](T &value) -> T & { return value; };
 
 __ALG__END__

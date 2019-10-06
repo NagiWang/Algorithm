@@ -36,8 +36,7 @@ void move_down(_ArrayType<T> &array, int low, int high, _Fn func)
 template <typename T, template <typename...> typename _ArrayType>
 inline void move_down(_ArrayType<T> &array, int low, int high)
 {
-	move_down(array, low, high,
-			  [](T &value) -> T & { return value; });
+	move_down(array, low, high, f_return_itself_value<T>);
 }
 
 /**
@@ -59,8 +58,7 @@ void make_heap(_ArrayType<T> &array, _Fn func)
 template <typename T, template <typename...> typename _ArrayType>
 inline void make_heap(_ArrayType<T> &array)
 {
-	make_heap(array,
-			  [](T &value) -> T & { return value; });
+	make_heap(array, f_return_itself_value<T>);
 }
 
 __ALG__END__
