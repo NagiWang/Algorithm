@@ -65,13 +65,6 @@ int partition(_ArrayType<T> &array, int first, int last, _Fn func)
 	std::swap(array[first], array[index]);
 
 	T pivot = array[first];
-	// array_print(array);
-	// std::cout << "pivot: " << pivot
-	// 		  << " first: " << first
-	// 		  << " mid: " << index
-	// 		  << " last: " << last
-	// 		  << "\n"
-	// 		  << std::endl;
 	int l = first + 1, r = last;
 	while (l <= r)
 	{
