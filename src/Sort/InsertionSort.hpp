@@ -13,8 +13,8 @@ __ALG__BEGIN__
  * @param g
  * @param func
  */
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void insertion_sort(_ArrayType<T> &array, int g, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+void insertion_sort(_ArrayType<T> &array, int g, _Fn &&func)
 {
 	T temp;
 	for (int k = g; k < (g << 1); ++k)
@@ -29,16 +29,16 @@ void insertion_sort(_ArrayType<T> &array, int g, _Fn func)
 		}
 }
 
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-inline void insertion_sort(_ArrayType<T> &array, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+inline void insertion_sort(_ArrayType<T> &array, _Fn &&func)
 {
 	insertion_sort(array, 1, func);
 }
 
-template <typename T, template <typename...> typename _ArrayType>
+template <template <typename...> typename _ArrayType, typename T>
 inline void insertion_sort(_ArrayType<T> &array)
 {
-	insertion_sort(array, 1, f_return_itself_value<T>);
+	insertion_sort(array, 1, f_return_itself_value);
 }
 
 __ALG__END__

@@ -32,8 +32,8 @@ unsigned long long &Sedgewick(int i)
  * @param array
  * @param func
  */
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void shell_sort(_ArrayType<T> &array, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+void shell_sort(_ArrayType<T> &array, _Fn &&func)
 {
 	int len = 0;
 	while (Sedgewick(len) < array.size())
@@ -43,10 +43,10 @@ void shell_sort(_ArrayType<T> &array, _Fn func)
 		insertion_sort(array, Sedgewick(i), func);
 }
 
-template <typename T, template <typename...> typename _ArrayType>
+template <template <typename...> typename _ArrayType, typename T>
 inline void shell_sort(_ArrayType<T> &array)
 {
-	shell_sort(array, f_return_itself_value<T>);
+	shell_sort(array, f_return_itself_value);
 }
 
 __ALG__END__

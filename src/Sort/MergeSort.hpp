@@ -3,8 +3,8 @@
 
 __ALG__BEGIN__
 
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void merge(_ArrayType<T> &array, int first, int last, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+void merge(_ArrayType<T> &array, int first, int last, _Fn &&func)
 {
 	if (last - first < 2)
 		return;
@@ -31,9 +31,9 @@ void merge(_ArrayType<T> &array, int first, int last, _Fn func)
 	// alg::array_print(array);
 }
 
-template <typename T, template <typename...> typename _ArrayType>
+template <template <typename...> typename _ArrayType, typename T>
 inline void
-merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_return_itself_value<T>); }
+merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_return_itself_value); }
 
 /**
  * @brief
@@ -46,28 +46,28 @@ merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_r
  * @param last
  * @param func
  */
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void merge_sort(_ArrayType<T> &array, int first, int last, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+void merge_sort(_ArrayType<T> &array, int first, int last, _Fn &&func)
 {
 	if (last - first > 1)
 	{
 		int mid = (first + last) >> 1;
-		merge_sort(array, first, mid, f_return_itself_value<T>);
-		merge_sort(array, mid, last, f_return_itself_value<T>);
-		merge(array, first, last, f_return_itself_value<T>);
+		merge_sort(array, first, mid, f_return_itself_value);
+		merge_sort(array, mid, last, f_return_itself_value);
+		merge(array, first, last, f_return_itself_value);
 	}
 }
 
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-inline void merge_sort(_ArrayType<T> &array, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+inline void merge_sort(_ArrayType<T> &array, _Fn &&func)
 {
 	merge_sort(array, 0, array.size(), func);
 }
 
-template <typename T, template <typename...> typename _ArrayType>
+template <template <typename...> typename _ArrayType, typename T>
 inline void merge_sort(_ArrayType<T> &array)
 {
-	merge_sort(array, f_return_itself_value<T>);
+	merge_sort(array, f_return_itself_value);
 }
 
 __ALG__END__

@@ -13,7 +13,7 @@ BUILD:
 
 
 Algorithm: Algorithm.hpp
-	$(CC)  Algorithm.hpp -std=c++17
+	$(CC)  "$<" $(STD) $(OO)
 
 
 build/sort_main.out: test/Sort_test/main.cpp

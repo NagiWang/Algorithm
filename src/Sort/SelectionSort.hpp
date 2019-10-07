@@ -11,7 +11,7 @@ __ALG__BEGIN__
  * @param array
  */
 template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void selection_sort(_ArrayType<T> &array, _Fn func)
+void selection_sort(_ArrayType<T> &array, _Fn &&func)
 {
 	if (array.empty())
 		return;
@@ -30,7 +30,7 @@ void selection_sort(_ArrayType<T> &array, _Fn func)
 template <typename T, template <typename...> typename _ArrayType>
 inline void selection_sort(_ArrayType<T> &array)
 {
-	selection_sort(array, f_return_itself_value<T>);
+	selection_sort(array, f_return_itself_value);
 }
 
 __ALG__END__

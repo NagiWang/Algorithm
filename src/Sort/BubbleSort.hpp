@@ -13,8 +13,8 @@ __ALG__BEGIN__
  * @param g
  * @param func
  */
-template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void bubble_sort(_ArrayType<T> &array, int g, _Fn func)
+template <template <typename...> typename _ArrayType, typename T, typename _Fn>
+void bubble_sort(_ArrayType<T> &array, int g, _Fn &&func)
 {
 	bool flag = false;
 	while (!flag)
@@ -31,10 +31,10 @@ void bubble_sort(_ArrayType<T> &array, int g, _Fn func)
 	}
 }
 
-template <typename T, template <typename...> typename _ArrayType>
+template <template <typename...> typename _ArrayType, typename T>
 inline void bubble_sort(_ArrayType<T> &array)
 {
-	bubble_sort(array, 1, f_return_itself_value<T>);
+	bubble_sort(array, 1, f_return_itself_value);
 }
 
 __ALG__END__

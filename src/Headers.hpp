@@ -49,12 +49,9 @@ __ALG__BEGIN__
 #define BOLDCYAN "\033[1m\033[36m"	/* Bold Cyan */
 #define BOLDWHITE "\033[1m\033[37m"   /* Bold White */
 
-// * * * * * * * * * * * * * * * *
-/**
- * @brief Generate Random Number
- *
- * @return int
- */
+// ******************************
+// *** General Random Number  ***
+// ******************************
 int Randint()
 {
 	static std::default_random_engine e(time(0));
@@ -88,9 +85,7 @@ void array_print(const T &array)
 // *********************************
 /**
  * @brief Return directly to its value
- * @tparam T
  */
-template <typename T>
-constexpr auto f_return_itself_value = [](const T &value) -> const T & { return value; };
+constexpr auto f_return_itself_value = [](const auto &value) -> const auto & { return value; };
 
 __ALG__END__
