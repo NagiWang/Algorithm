@@ -9,7 +9,7 @@ void merge(_ArrayType<T> &array, int first, int last, _Fn &&func)
 	if (last - first < 2)
 		return;
 
-	static T result[10000];
+	static T result[10000000];
 	int mid = (first + last) >> 1;
 	int l = first, r = mid, index = 0;
 	while (l < mid && r < last)

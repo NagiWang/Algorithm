@@ -1,9 +1,12 @@
 #include "../../Algorithm.hpp"
 
+
+#define __SSE4_2__ 1
+#define __SSE_MATH__ 1
 int main()
 {
 	std::vector<int> arr{};
-	for (int i = 0; i < 10000; ++i)
+	for (int i = 0; i < 10000000; ++i)
 		arr.push_back(i);
 
 	auto start = std::chrono::system_clock::now();
