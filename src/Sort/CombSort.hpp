@@ -14,7 +14,7 @@ __ALG__BEGIN__
  * @param func
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void comb_sort(_ArrayType<T> &array, _Fn &&func)
+void comb_sort(_ArrayType<T> &array, _Fn func)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)

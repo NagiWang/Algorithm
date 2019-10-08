@@ -11,7 +11,7 @@ __ALG__BEGIN__
  * @param array
  */
 template <typename T, template <typename...> typename _ArrayType, typename _Fn>
-void selection_sort(_ArrayType<T> &array, _Fn &&func)
+void selection_sort(_ArrayType<T> &array, _Fn func)
 {
 	if (array.empty())
 		return;

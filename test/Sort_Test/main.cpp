@@ -1,8 +1,5 @@
 #include "../../Algorithm.hpp"
 
-
-#define __SSE4_2__ 1
-#define __SSE_MATH__ 1
 int main()
 {
 	std::vector<int> arr{};

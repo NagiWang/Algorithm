@@ -14,7 +14,7 @@ __ALG__BEGIN__
  * @param func
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void bubble_sort(_ArrayType<T> &array, int g, _Fn &&func)
+void bubble_sort(_ArrayType<T> &array, int g, _Fn func)
 {
 	bool flag = false;
 	while (!flag)

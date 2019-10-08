@@ -4,7 +4,7 @@
 __ALG__BEGIN__
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int three_mid(const _ArrayType<T> &array, int first, int last, _Fn &&func)
+inline int three_mid(const _ArrayType<T> &array, int first, int last, _Fn func)
 {
 	if (first >= last)
 		return first;
@@ -31,7 +31,7 @@ inline int three_mid(const _ArrayType<T> &array, int first, int last, _Fn &&func
 }
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int three_mid(const _ArrayType<T> &array, _Fn &&func)
+inline int three_mid(const _ArrayType<T> &array, _Fn func)
 {
 	return three_mid(array, 0, array.size() - 1, func);
 }
@@ -55,7 +55,7 @@ inline int three_mid(const _ArrayType<T> &array)
  * @return int
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-int partition(_ArrayType<T> &array, int first, int last, _Fn &&func)
+int partition(_ArrayType<T> &array, int first, int last, _Fn func)
 {
 	if (first >= last)
 		return -1;
@@ -78,7 +78,7 @@ int partition(_ArrayType<T> &array, int first, int last, _Fn &&func)
 }
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int partition(_ArrayType<T> &array, _Fn &&func)
+inline int partition(_ArrayType<T> &array, _Fn func)
 {
 	return partition(array, 0, array.size() - 1, func);
 }
@@ -101,7 +101,7 @@ inline int partition(_ArrayType<T> &array)
  * @param func
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void quick_sort(_ArrayType<T> &array, int low, int high, _Fn &&func)
+void quick_sort(_ArrayType<T> &array, int low, int high, _Fn func)
 {
 	if (low >= high)
 		return;
@@ -118,7 +118,7 @@ void quick_sort(_ArrayType<T> &array, int low, int high, _Fn &&func)
 }
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline void quick_sort(_ArrayType<T> &array, _Fn &&func)
+inline void quick_sort(_ArrayType<T> &array, _Fn func)
 {
 	quick_sort(array, 0, array.size() - 1, func);
 }

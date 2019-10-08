@@ -4,7 +4,7 @@
 __ALG__BEGIN__
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void merge(_ArrayType<T> &array, int first, int last, _Fn &&func)
+void merge(_ArrayType<T> &array, int first, int last, _Fn func)
 {
 	if (last - first < 2)
 		return;
@@ -47,19 +47,19 @@ merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_r
  * @param func
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void merge_sort(_ArrayType<T> &array, int first, int last, _Fn &&func)
+void merge_sort(_ArrayType<T> &array, int first, int last, _Fn func)
 {
 	if (last - first > 1)
 	{
 		int mid = (first + last) >> 1;
-		merge_sort(array, first, mid, f_return_itself_value);
-		merge_sort(array, mid, last, f_return_itself_value);
-		merge(array, first, last, f_return_itself_value);
+		merge_sort(array, first, mid, func);
+		merge_sort(array, mid, last, func);
+		merge(array, first, last, func);
 	}
 }
 
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline void merge_sort(_ArrayType<T> &array, _Fn &&func)
+inline void merge_sort(_ArrayType<T> &array, _Fn func)
 {
 	merge_sort(array, 0, array.size(), func);
 }

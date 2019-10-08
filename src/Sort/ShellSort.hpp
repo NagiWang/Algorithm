@@ -33,7 +33,7 @@ unsigned long long &Sedgewick(int i)
  * @param func
  */
 template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void shell_sort(_ArrayType<T> &array, _Fn &&func)
+void shell_sort(_ArrayType<T> &array, _Fn func)
 {
 	int len = 0;
 	while (Sedgewick(len) < array.size())

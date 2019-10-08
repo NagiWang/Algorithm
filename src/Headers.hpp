@@ -64,7 +64,7 @@ int Randint()
 template <typename T>
 void array_print(const T &array)
 {
-	if constexpr (0)
+	if constexpr (1)
 	{
 		if (array.size() > 30)
 		{
@@ -87,5 +87,16 @@ void array_print(const T &array)
  * @brief Return directly to its value
  */
 constexpr auto f_return_itself_value = [](const auto &value) -> const auto & { return value; };
+
+// *********************************
+// *** 		Meta Functions 		 ***
+// *********************************
+
+// template <template <typename...> typename _ArrayType, typename T>
+// struct remove_array_type
+// {
+// 	typedef typename std::decay_t<T> type;
+// 	remove_array_type(_ArrayType<T> &);
+// };
 
 __ALG__END__
