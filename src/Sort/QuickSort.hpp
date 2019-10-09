@@ -3,8 +3,8 @@
 
 __ALG__BEGIN__
 
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int three_mid(const _ArrayType<T> &array, int first, int last, _Fn func)
+template <typename _ArrayType, typename _Fn>
+inline int three_mid(const _ArrayType &array, int first, int last, _Fn func)
 {
 	if (first >= last)
 		return first;
@@ -30,14 +30,14 @@ inline int three_mid(const _ArrayType<T> &array, int first, int last, _Fn func)
 	}
 }
 
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int three_mid(const _ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+inline int three_mid(const _ArrayType &array, _Fn func)
 {
 	return three_mid(array, 0, array.size() - 1, func);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline int three_mid(const _ArrayType<T> &array)
+template <typename _ArrayType>
+inline int three_mid(const _ArrayType &array)
 {
 	return three_mid(array, f_return_itself_value);
 }
@@ -45,7 +45,6 @@ inline int three_mid(const _ArrayType<T> &array)
 /**
  * @brief
  *
- * @tparam T
  * @tparam _ArrayType
  * @tparam _Fn
  * @param array
@@ -54,8 +53,8 @@ inline int three_mid(const _ArrayType<T> &array)
  * @param func
  * @return int
  */
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-int partition(_ArrayType<T> &array, int first, int last, _Fn func)
+template <typename _ArrayType, typename _Fn>
+int partition(_ArrayType &array, int first, int last, _Fn func)
 {
 	if (first >= last)
 		return -1;
@@ -64,7 +63,7 @@ int partition(_ArrayType<T> &array, int first, int last, _Fn func)
 	int index = three_mid(array, first, last, func);
 	std::swap(array[first], array[index]);
 
-	T pivot = array[first];
+	auto pivot = array[first];
 	int l = first + 1, r = last;
 	while (l <= r)
 	{
@@ -77,14 +76,14 @@ int partition(_ArrayType<T> &array, int first, int last, _Fn func)
 	return l;
 }
 
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline int partition(_ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+inline int partition(_ArrayType &array, _Fn func)
 {
 	return partition(array, 0, array.size() - 1, func);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline int partition(_ArrayType<T> &array)
+template <typename _ArrayType>
+inline int partition(_ArrayType &array)
 {
 	return partition(array, f_return_itself_value);
 }
@@ -92,7 +91,6 @@ inline int partition(_ArrayType<T> &array)
 /**
  * @brief
  *
- * @tparam T
  * @tparam _ArrayType
  * @tparam _Fn
  * @param array
@@ -100,8 +98,8 @@ inline int partition(_ArrayType<T> &array)
  * @param high
  * @param func
  */
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void quick_sort(_ArrayType<T> &array, int low, int high, _Fn func)
+template <typename _ArrayType, typename _Fn>
+void quick_sort(_ArrayType &array, int low, int high, _Fn func)
 {
 	if (low >= high)
 		return;
@@ -117,14 +115,14 @@ void quick_sort(_ArrayType<T> &array, int low, int high, _Fn func)
 	}
 }
 
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline void quick_sort(_ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+inline void quick_sort(_ArrayType &array, _Fn func)
 {
 	quick_sort(array, 0, array.size() - 1, func);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline void quick_sort(_ArrayType<T> &array)
+template <typename _ArrayType>
+inline void quick_sort(_ArrayType &array)
 {
 	quick_sort(array, f_return_itself_value);
 }

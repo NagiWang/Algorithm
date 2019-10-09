@@ -13,8 +13,8 @@ __ALG__BEGIN__
  * @param array
  * @param func
  */
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void heap_sort(_ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+void heap_sort(_ArrayType &array, _Fn func)
 {
 	make_heap(array, func);
 
@@ -25,8 +25,8 @@ void heap_sort(_ArrayType<T> &array, _Fn func)
 	}
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline void heap_sort(_ArrayType<T> &array)
+template <typename _ArrayType>
+inline void heap_sort(_ArrayType &array)
 {
 	heap_sort(array, f_return_itself_value);
 }

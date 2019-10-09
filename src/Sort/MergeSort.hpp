@@ -9,7 +9,7 @@ void merge(_ArrayType<T> &array, int first, int last, _Fn func)
 	if (last - first < 2)
 		return;
 
-	static T result[10000000];
+	static T result[10000];
 	int mid = (first + last) >> 1;
 	int l = first, r = mid, index = 0;
 	while (l < mid && r < last)
@@ -31,9 +31,8 @@ void merge(_ArrayType<T> &array, int first, int last, _Fn func)
 	// alg::array_print(array);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline void
-merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_return_itself_value); }
+template <typename _ArrayType>
+inline void merge(_ArrayType &array, int first, int last) { merge(array, first, last, f_return_itself_value); }
 
 /**
  * @brief
@@ -46,8 +45,8 @@ merge(_ArrayType<T> &array, int first, int last) { merge(array, first, last, f_r
  * @param last
  * @param func
  */
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void merge_sort(_ArrayType<T> &array, int first, int last, _Fn func)
+template <typename _ArrayType, typename _Fn>
+void merge_sort(_ArrayType &array, int first, int last, _Fn func)
 {
 	if (last - first > 1)
 	{
@@ -58,14 +57,14 @@ void merge_sort(_ArrayType<T> &array, int first, int last, _Fn func)
 	}
 }
 
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-inline void merge_sort(_ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+inline void merge_sort(_ArrayType &array, _Fn func)
 {
 	merge_sort(array, 0, array.size(), func);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline void merge_sort(_ArrayType<T> &array)
+template <typename _ArrayType>
+inline void merge_sort(_ArrayType &array)
 {
 	merge_sort(array, f_return_itself_value);
 }

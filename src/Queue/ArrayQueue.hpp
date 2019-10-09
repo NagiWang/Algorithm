@@ -17,14 +17,16 @@ private:
 	T data[_size];
 
 public:
-	ArrayQueue() : first(-1), last(-1), count(0) {}
-	ArrayQueue(std::initializer_list<T> init_list) : first(-1), last(), count(0)
+	ArrayQueue() : first{-1}, last{-1}, count{0} {}
+	ArrayQueue(std::initializer_list<T> init_list) : first{-1}, last{}, count{0}
 	{
 
 		for (auto value : init_list)
 		{
 			if (count <= _size)
 				data[count++] = value;
+			else
+				break;
 		}
 		if (count > _size)
 			std::cout << RED

@@ -12,6 +12,7 @@
 #include <stack>
 #include <string>
 #include <type_traits>
+#include <utility>
 #include <vector>
 
 #ifndef __ALG__BEGIN__
@@ -87,6 +88,7 @@ void array_print(const T &array)
  * @brief Return directly to its value
  */
 constexpr auto f_return_itself_value = [](const auto &value) -> const auto & { return value; };
+constexpr auto f_return_pair_first = [](const auto &value) -> const auto & { return value.first; };
 
 // *********************************
 // *** 		Meta Functions 		 ***

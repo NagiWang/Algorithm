@@ -13,8 +13,8 @@ __ALG__BEGIN__
  * @param array
  * @param func
  */
-template <template <typename...> typename _ArrayType, typename T, typename _Fn>
-void comb_sort(_ArrayType<T> &array, _Fn func)
+template <typename _ArrayType, typename _Fn>
+void comb_sort(_ArrayType &array, _Fn func)
 {
 	int step = array.size(), j, k;
 	while ((step = int(step / 1.3)) > 1)
@@ -29,8 +29,8 @@ void comb_sort(_ArrayType<T> &array, _Fn func)
 	bubble_sort(array);
 }
 
-template <template <typename...> typename _ArrayType, typename T>
-inline void comb_sort(_ArrayType<T> &array)
+template <typename _ArrayType>
+inline void comb_sort(_ArrayType &array)
 {
 	comb_sort(array, f_return_itself_value);
 }

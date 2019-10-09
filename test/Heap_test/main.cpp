@@ -9,7 +9,8 @@ int main()
 	alg::move_down(arr);
 	alg::array_print(arr);
 
-	// array_print(arr);
+	std::random_shuffle(std::begin(arr), std::end(arr));
+	alg::array_print(arr);
 	alg::make_heap(arr);
 	alg::array_print(arr);
 

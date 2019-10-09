@@ -2,8 +2,8 @@
 
 int main()
 {
-	// alg::ArrayQueue<int> que;
-	alg::ListQueue<int> que;
+	alg::ArrayQueue<int> que;
+	// alg::ListQueue<int> que;
 	for (int i = 0; i < 48; ++i)
 	{
 		que.enqueue(i);

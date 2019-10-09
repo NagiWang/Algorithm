@@ -17,7 +17,6 @@ __ALG__BEGIN__
 template <typename _ArrayType, typename _Fn>
 void move_down(_ArrayType &array, int low, int high, _Fn func)
 {
-	using Type = std::decay_t<_ArrayType>;
 	int largest = (low << 1) + 1;
 	while (largest < high)
 	{
