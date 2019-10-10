@@ -21,7 +21,7 @@ void insertion_sort(_ArrayType &array, int g, _Fn func)
 		for (int i = k, j; i < array.size();)
 		{
 			temp = array[i];
-			for (j = i; j - g >= 0 and func(temp) < func(array[j - g]); j -= g)
+			for (j = i; j - g >= 0 && func(temp) < func(array[j - g]); j -= g)
 				array[j] = array[j - g];
 
 			array[j] = temp;

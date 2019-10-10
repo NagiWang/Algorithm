@@ -5,6 +5,7 @@
 #include <chrono>
 #include <ctime>
 #include <iostream>
+#include <iterator>
 #include <list>
 #include <memory>
 #include <queue>
@@ -53,7 +54,7 @@ __ALG__BEGIN__
 // ******************************
 // *** General Random Number  ***
 // ******************************
-int Randint()
+unsigned int Randint()
 {
 	static std::default_random_engine e(time(0));
 	return e();
@@ -89,6 +90,7 @@ void array_print(const T &array)
  */
 constexpr auto f_return_itself_value = [](const auto &value) -> const auto & { return value; };
 constexpr auto f_return_pair_first = [](const auto &value) -> const auto & { return value.first; };
+constexpr auto f_return_pair_second = [](const auto &value) -> const auto & { return value.second; };
 
 // *********************************
 // *** 		Meta Functions 		 ***

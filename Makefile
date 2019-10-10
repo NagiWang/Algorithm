@@ -13,12 +13,11 @@ BUILD:
 
 
 Algorithm: Algorithm.hpp
-	$(CC)  "$<" $(STD) $(OO)
+	$(CC) "$<" $(STD) $(OO)
 
 
 build/sort_main.out: test/Sort_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"
-
 
 build/heap_main.out: test/Heap_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"

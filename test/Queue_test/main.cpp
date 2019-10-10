@@ -2,7 +2,7 @@
 
 int main()
 {
-	alg::ArrayQueue<int> que;
+	alg::PriorityQueue<int> que;
 	// alg::ListQueue<int> que;
 	for (int i = 0; i < 48; ++i)
 	{
@@ -17,8 +17,7 @@ int main()
 	}
 	// std::cout << que.dequeue() << " ";
 
-	std::cout
-		<< std::endl;
+	std::cout << std::endl;
 	for (int i = 32; i < 48; ++i)
 	{
 		que.enqueue(i);

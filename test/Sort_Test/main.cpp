@@ -2,9 +2,11 @@
 
 int main()
 {
-	std::vector<int> arr{};
+	std::vector<int> arr;
 	for (int i = 0; i < 10000; ++i)
 		arr.push_back(i);
+
+	std::default_random_engine g(time(0));
 
 	auto start = std::chrono::system_clock::now();
 	auto end = std::chrono::system_clock::now();
@@ -14,7 +16,7 @@ int main()
 
 	//* Bubble Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nBubble Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -26,7 +28,7 @@ int main()
 
 	//* Comb Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nComb Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -38,7 +40,7 @@ int main()
 
 	//* Heap Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nHeap Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -50,7 +52,7 @@ int main()
 
 	//* Insertion Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nInsertion Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -62,7 +64,7 @@ int main()
 
 	//* Merge Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nMerge Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -74,7 +76,7 @@ int main()
 
 	//* Quick Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nQuick Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -86,7 +88,7 @@ int main()
 
 	//* Selection Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nSelection Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();
@@ -98,7 +100,7 @@ int main()
 
 	//* Shell Sort Test
 	//* Random Shuffle Arr
-	std::random_shuffle(std::begin(arr), std::end(arr));
+	std::shuffle(arr.begin(), arr.end(), g);
 	std::cout << "\nShell Sort :" << std::endl;
 	alg::array_print(arr);
 	start = std::chrono::system_clock::now();

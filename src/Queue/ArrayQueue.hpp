@@ -23,12 +23,12 @@ public:
 
 		for (auto value : init_list)
 		{
-			if (count <= _size)
+			if (count < _size)
 				data[count++] = value;
 			else
 				break;
 		}
-		if (count > _size)
+		if (init_list.size() > _size)
 			std::cout << RED
 					  << "\nThe queue is full! Only retain the first " << _size << " elements.\n"
 					  << RESET;

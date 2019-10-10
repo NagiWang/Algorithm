@@ -20,7 +20,7 @@ void move_down(_ArrayType &array, int low, int high, _Fn func)
 	int largest = (low << 1) + 1;
 	while (largest < high)
 	{
-		if (largest < high - 1 and func(array[largest]) < func(array[largest + 1]))
+		if (largest < high - 1 && func(array[largest]) < func(array[largest + 1]))
 			++largest;
 		if (func(array[low]) < func(array[largest]))
 		{
