@@ -14,17 +14,17 @@ int main()
 	std::chrono::duration<double> elapsed_seconds;
 	std::time_t end_time;
 
-	//* Bubble Sort Test
-	//* Random Shuffle Arr
-	std::shuffle(arr.begin(), arr.end(), g);
-	std::cout << "\nBubble Sort :" << std::endl;
-	alg::array_print(arr);
-	start = std::chrono::system_clock::now();
-	alg::bubble_sort(arr);
-	end = std::chrono::system_clock::now();
-	alg::array_print(arr);
-	elapsed_seconds = end - start;
-	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+	// //* Bubble Sort Test
+	// //* Random Shuffle Arr
+	// std::shuffle(arr.begin(), arr.end(), g);
+	// std::cout << "\nBubble Sort :" << std::endl;
+	// alg::array_print(arr);
+	// start = std::chrono::system_clock::now();
+	// alg::bubble_sort(arr);
+	// end = std::chrono::system_clock::now();
+	// alg::array_print(arr);
+	// elapsed_seconds = end - start;
+	// std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 	//* Comb Sort Test
 	//* Random Shuffle Arr
@@ -50,17 +50,17 @@ int main()
 	elapsed_seconds = end - start;
 	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
-	//* Insertion Sort Test
-	//* Random Shuffle Arr
-	std::shuffle(arr.begin(), arr.end(), g);
-	std::cout << "\nInsertion Sort :" << std::endl;
-	alg::array_print(arr);
-	start = std::chrono::system_clock::now();
-	alg::insertion_sort(arr);
-	end = std::chrono::system_clock::now();
-	alg::array_print(arr);
-	elapsed_seconds = end - start;
-	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+	// //* Insertion Sort Test
+	// //* Random Shuffle Arr
+	// std::shuffle(arr.begin(), arr.end(), g);
+	// std::cout << "\nInsertion Sort :" << std::endl;
+	// alg::array_print(arr);
+	// start = std::chrono::system_clock::now();
+	// alg::insertion_sort(arr);
+	// end = std::chrono::system_clock::now();
+	// alg::array_print(arr);
+	// elapsed_seconds = end - start;
+	// std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 	//* Merge Sort Test
 	//* Random Shuffle Arr
@@ -86,17 +86,17 @@ int main()
 	elapsed_seconds = end - start;
 	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
-	//* Selection Sort Test
-	//* Random Shuffle Arr
-	std::shuffle(arr.begin(), arr.end(), g);
-	std::cout << "\nSelection Sort :" << std::endl;
-	alg::array_print(arr);
-	start = std::chrono::system_clock::now();
-	alg::selection_sort(arr);
-	end = std::chrono::system_clock::now();
-	alg::array_print(arr);
-	elapsed_seconds = end - start;
-	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+	// //* Selection Sort Test
+	// //* Random Shuffle Arr
+	// std::shuffle(arr.begin(), arr.end(), g);
+	// std::cout << "\nSelection Sort :" << std::endl;
+	// alg::array_print(arr);
+	// start = std::chrono::system_clock::now();
+	// alg::selection_sort(arr);
+	// end = std::chrono::system_clock::now();
+	// alg::array_print(arr);
+	// elapsed_seconds = end - start;
+	// std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 	//* Shell Sort Test
 	//* Random Shuffle Arr
@@ -111,4 +111,4 @@ int main()
 	std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
 	return 0;
-}
+ }
