@@ -12,7 +12,7 @@ private:
 	std::vector<std::pair<_elemType, _keyType>> data;
 
 public:
-	PriorityQueue() : data{}, count{0} {}
+	PriorityQueue() : data(_size), count{0} {}
 
 	PriorityQueue(std::initializer_list<std::pair<_elemType, _keyType>> &init_list) : count{0}
 	{
@@ -47,7 +47,7 @@ public:
 			return;
 		}
 		std::swap(data[0], data[count++]);
-		data[0] = std::move(std::pair<_elemType, _keyType>(value, key));
+		data[0] = std::make_pair(value, key);
 		move_down(data, 0, count, f_return_pair_second);
 	}
 	void enqueue(const _elemType &value, const _keyType key = 0) { insert(value, key); }
