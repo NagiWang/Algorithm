@@ -12,14 +12,14 @@ private:
 	std::vector<std::pair<_elemType, _keyType>> data;
 
 public:
-	PriorityQueue() : data(_size), count{0} {}
+	PriorityQueue() : data(_size), count(0) {}
 
-	PriorityQueue(std::initializer_list<std::pair<_elemType, _keyType>> &init_list) : count{0}
+	PriorityQueue(std::initializer_list<_elemType> &&init_list) : data(_size), count(0)
 	{
 		for (auto value : init_list)
 		{
 			if (count < _size)
-				data[count++] = value;
+				data[count++] = std::move(std::make_pair(value, 0));
 			else
 				break;
 		}
@@ -33,8 +33,8 @@ public:
 	bool isFull() { return count == _size; }
 	bool isEmpty() { return count == 0; }
 	void print() { std::cout << "top: " << data[0].first
-							 << " key : " << data[0].second
-							 << " count: " << count
+							 << "  key: " << data[0].second
+							 << "  count: " << count
 							 << std::endl; }
 
 	void insert(const _elemType &value, const _keyType key = 0)

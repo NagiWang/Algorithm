@@ -55,10 +55,16 @@ inline void move_down(_ArrayType &array)
  * @param func
  */
 template <typename _ArrayType, typename _Fn>
-void make_heap(_ArrayType &array, _Fn func)
+void make_heap(_ArrayType &array, int first, int last, _Fn func)
 {
 	for (int i = (array.size() >> 1) - 1; i >= 0; --i)
-		move_down(array, i, array.size(), func);
+		move_down(array, first, last, func);
+}
+
+template <typename _ArrayType, typename _Fn>
+void make_heap(_ArrayType &array, _Fn func)
+{
+	make_heap(array, 0, array.size(), func);
 }
 
 template <typename _ArrayType>

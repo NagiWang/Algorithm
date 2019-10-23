@@ -2,7 +2,8 @@ all:BUILD \
 	Algorithm \
     build/sort_main.out \
 	build/heap_main.out \
-	build/queue_main.out
+	build/queue_main.out \
+	build/math_main.out
 
 CC=clang++-8
 OO=-O3
@@ -23,6 +24,9 @@ build/heap_main.out: test/Heap_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 build/queue_main.out: test/Queue_test/main.cpp
+	$(CC) "$<" $(STD) $(OO) -o "$@"
+
+build/math_main.out: test/Math_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 clean:

@@ -2,12 +2,14 @@
 
 #include <algorithm>
 #include <array>
+#include <cassert>
 #include <chrono>
 #include <ctime>
 #include <iostream>
 #include <iterator>
 #include <list>
 #include <memory>
+#include <numeric>
 #include <queue>
 #include <random>
 #include <stack>
@@ -91,6 +93,7 @@ void array_print(const T &array)
 constexpr auto f_return_itself_value = [](const auto &value) -> const auto & { return value; };
 constexpr auto f_return_pair_first = [](const auto &value) -> const auto & { return value.first; };
 constexpr auto f_return_pair_second = [](const auto &value) -> const auto & { return value.second; };
+constexpr auto f_return_square = [](const auto &value) -> const auto { return value * value; };
 
 // *********************************
 // *** 		Meta Functions 		 ***
