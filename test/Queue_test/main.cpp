@@ -1,4 +1,4 @@
-#include "../../Algorithm.hpp"
+#include "../../Algorithm.h"
 
 int main()
 {

@@ -1,6 +1,6 @@
 #pragma once
-#include "../Headers.hpp"
-#include "InsertionSort.hpp"
+#include "../Headers.h"
+#include "InsertionSort.h"
 
 __ALG__BEGIN__
 

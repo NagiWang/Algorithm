@@ -1,5 +1,5 @@
 #pragma once
-#include "../Headers.hpp"
+#include "../Headers.h"
 
 __ALG__BEGIN__
 
@@ -44,12 +44,12 @@ public:
 			_flag = true;
 
 		int N = _x.size();
-		double sum_x = std::accumulate(_x.begin(), _x.end(), 0);
+		double sum_x = std::accumulate(_x.cbegin(), _x.cend(), 0);
 		double mean_x = sum_x / N;
-		double sum_y = std::accumulate(_y.begin(), _y.end(), 0);
+		double sum_y = std::accumulate(_y.cbegin(), _y.cend(), 0);
 		double mean_y = sum_y / N;
-		double sum_xy = std::inner_product(_x.begin(), _x.end(), _y.begin(), 0);
-		double sum_xx = std::inner_product(_x.begin(), _x.end(), _x.begin(), 0);
+		double sum_xy = std::inner_product(_x.cbegin(), _x.cend(), _y.cbegin(), 0);
+		double sum_xx = std::inner_product(_x.cbegin(), _x.cend(), _x.cbegin(), 0);
 
 		_result[0] = (N * sum_xy - sum_x * sum_y) / (N * sum_xx - sum_x * sum_x);
 		_result[1] = mean_y - _result[0] * mean_x;
@@ -63,7 +63,7 @@ public:
 	std::vector<T> prediction(const std::vector<T> &x_data)
 	{
 		std::vector<T> pred{};
-		std::for_each(x_data.begin(), x_data.end(),
+		std::for_each(x_data.cbegin(), x_data.cend(),
 					  [&](const auto &value) { pred.push_back(value * _result[0] + _result[1]); });
 		return pred;
 	}

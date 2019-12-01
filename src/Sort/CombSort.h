@@ -1,6 +1,6 @@
 #pragma once
-#include "../Headers.hpp"
-#include "BubbleSort.hpp"
+#include "../Headers.h"
+#include "BubbleSort.h"
 
 __ALG__BEGIN__
 

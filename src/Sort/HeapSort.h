@@ -1,6 +1,6 @@
 #pragma once
-#include "../Headers.hpp"
-#include "../Heap.hpp"
+#include "../Headers.h"
+#include "../Heap.h"
 
 __ALG__BEGIN__
 

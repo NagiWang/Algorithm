@@ -5,8 +5,8 @@ all:BUILD \
 	build/math_main.out
 
 
-CC=clang++-8
-OO=-O0
+CC=clang++-9
+OO=-O2
 STD=-std=c++17
 
 BUILD:

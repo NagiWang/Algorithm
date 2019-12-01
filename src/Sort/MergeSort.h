@@ -1,5 +1,5 @@
 #pragma once
-#include "../Headers.hpp"
+#include "../Headers.h"
 
 __ALG__BEGIN__
 
@@ -32,7 +32,10 @@ void merge(_ArrayType<T> &array, int first, int last, _Fn func)
 }
 
 template <typename _ArrayType>
-inline void merge(_ArrayType &array, int first, int last) { merge(array, first, last, f_return_itself_value); }
+inline void merge(_ArrayType &array, int first, int last)
+{
+	merge(array, first, last, f_return_itself_value);
+}
 
 /**
  * @brief
