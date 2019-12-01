@@ -5,3 +5,4 @@
 #include "src/Math.h"
 #include "src/Queue.h"
 #include "src/Sort.h"
+#include "src/Tensor.h"

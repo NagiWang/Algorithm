@@ -16,6 +16,7 @@
 #include <string>
 #include <type_traits>
 #include <utility>
+#include <valarray>
 #include <vector>
 
 #ifndef __ALG__BEGIN__
