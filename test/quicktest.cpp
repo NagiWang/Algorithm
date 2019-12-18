@@ -43,6 +43,7 @@ int main()
 	// 	std::forward_as_tuple(10, 'a'));
 	// std::cout << "Piecewise constructed: "
 	// 		  << p6.first << ", " << p6.second << '\n';
-	static_assert(std::is_same<alg::ArrayPtr_t<int[5], 1>, int **>::value, "Hi~");
-	// static_assert(std::is_same<typename alg::_AddArrayPointer<int[5], 4, 3>::type, int **>::value, "Hi~");
+
+	static_assert(std::is_same<alg::Tensor<double, 1, 1, 3>::type, double[3][2][1]>::value, "Hi~");
+	static_assert(std::is_same<alg::makep_tensor_t<int, 3, 4, 6>, int[5][4][3]>::value, "Hi~");
 }
