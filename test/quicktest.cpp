@@ -15,7 +15,7 @@
 // 	// std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
 // 	// std::cout << "\n";
 // }
-#include "../Algorithm.h"
+#include "../Algorithm.hpp"
 #include <complex>
 #include <iostream>
 #include <string>
@@ -44,6 +44,14 @@ int main()
 	// std::cout << "Piecewise constructed: "
 	// 		  << p6.first << ", " << p6.second << '\n';
 
-	static_assert(std::is_same<alg::Tensor<double, 1, 1, 3>::type, double[3][2][1]>::value, "Hi~");
-	static_assert(std::is_same<alg::makep_tensor_t<int, 3, 4, 6>, int[5][4][3]>::value, "Hi~");
+	static_assert(std::is_same<alg::Tensor<double, 1, 2, 3>::type, double[3][2][1]>::value, "Hi~");
+	static_assert(std::is_same<alg::makep_tensor_t<int, 3, 4, 5>, int[5][4][3]>::value, "Hi~");
+
+	using a = alg::tyArray<int, 0, 1, 1, 0, 0, 0, 0>;
+	using b = alg::tyArray<int, 0, 1, 0, 1, 0, 0, 0>;
+
+	using c = typename alg::tyTransform_t<a, b, alg::tySub>;
+
+	// using c = decltype(alg::Mul<a>(a{},b{}));
+	static_assert(std::is_same<c, alg::tyArray<int, 0, 1, 0, 0, 0, 0, 0>>::value, "Hi~");
 }
