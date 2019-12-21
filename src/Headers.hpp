@@ -15,6 +15,7 @@
 #include <stack>
 #include <string>
 #include <type_traits>
+#include <typeinfo>
 #include <utility>
 #include <valarray>
 #include <vector>
@@ -28,6 +29,18 @@
 #ifndef __ALG__END__
 #define __ALG__END__ \
 	}                \
+	;
+#endif
+
+#ifndef __ALG__META__BEGIN__
+#define __ALG__META__BEGIN__ \
+	namespace alg::meta      \
+	{
+#endif
+
+#ifndef __ALG__META__END__
+#define __ALG__META__END__ \
+	}                      \
 	;
 #endif
 

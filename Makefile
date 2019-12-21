@@ -2,7 +2,8 @@ all:BUILD \
     build/sort_main.out \
 	build/heap_main.out \
 	build/queue_main.out \
-	build/math_main.out
+	build/math_main.out  \
+	build/meta_main.out
 
 
 CC=clang++-9
@@ -27,7 +28,10 @@ build/queue_main.out: test/Queue_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 build/math_main.out: test/Math_test/main.cpp
-	$(CC) $(DEBUG) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(OO) -o "$@"
+
+build/meta_main.out: test/Meta_test/main.cpp
+	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 clean:
 	rm -rf build
