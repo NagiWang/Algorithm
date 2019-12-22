@@ -1,24 +1,26 @@
+#pragma once
 #include "../Headers.hpp"
+#include "Check.hpp"
 
 __ALG__META__BEGIN__
 
 template <class T, T... Args>
-struct tyDim
+struct qDim : same_size_check<sizeof...(Args), 7> // !The qDim's dimension will be 7
 {
-    using type = tyDim<T, Args...>;
+    using type = qDim<T, Args...>;
     using value_type = T;
 };
 
-typedef tyDim<int, 1, 0, 0, 0, 0, 0, 0> mass;
-typedef tyDim<int, 0, 1, 0, 0, 0, 0, 0> length;
-typedef tyDim<int, 0, 0, 1, 0, 0, 0, 0> time;
-typedef tyDim<int, 0, 0, 0, 1, 0, 0, 0> charge;
-typedef tyDim<int, 0, 0, 0, 0, 1, 0, 0> temperature;
-typedef tyDim<int, 0, 0, 0, 0, 0, 1, 0> intensity;
-typedef tyDim<int, 0, 0, 0, 0, 0, 0, 1> amount_of_substance;
+typedef qDim<int, 1, 0, 0, 0, 0, 0, 0> qmass;
+typedef qDim<int, 0, 1, 0, 0, 0, 0, 0> qlength;
+typedef qDim<int, 0, 0, 1, 0, 0, 0, 0> qtime;
+typedef qDim<int, 0, 0, 0, 1, 0, 0, 0> qcharge;
+typedef qDim<int, 0, 0, 0, 0, 1, 0, 0> qtemperature;
+typedef qDim<int, 0, 0, 0, 0, 0, 1, 0> qintensity;
+typedef qDim<int, 0, 0, 0, 0, 0, 0, 1> qamount_of_substance;
 
 template <typename T1, typename T2, typename Func>
-struct tyTransform
+struct qTransform
 {
 };
 
@@ -28,38 +30,33 @@ template <template <typename Td, Td... Args1> class T1,
           Td... Args1,
           Td... Args2,
           typename Func>
-struct tyTransform<T1<Td, Args1...>, T2<Td, Args2...>, Func>
+struct qTransform<T1<Td, Args1...>, T2<Td, Args2...>, Func>
 {
-    constexpr tyTransform()
-    {
-        static_assert(sizeof...(Args1) != 7, "Hi");
-        static_assert(sizeof...(Args2) != 7, "Hi");
-    }
-    using type = typename tyDim<Td, Func()(Args1, Args2)...>::type;
+    using type = typename qDim<Td, Func()(Args1, Args2)...>::type;
 };
 
 template <typename T1, typename T2, typename Func>
-using tyTransform_t = typename tyTransform<T1, T2, Func>::type;
+using qTransform_t = typename qTransform<T1, T2, Func>::type;
 
-struct tyAdd
+struct qDimAdd
 {
     template <typename T>
     constexpr decltype(auto) operator()(T &&v1, T &&v2) const { return v1 + v2; }
 };
 
-struct tySub
+struct qDimSub
 {
     template <typename T>
     constexpr decltype(auto) operator()(T &&v1, T &&v2) const { return v1 - v2; }
 };
 
 template <class T, class Dimensions>
-struct Quantity
+struct metaQuantity
 {
     using value_type = T;
     using dim_value_type = typename Dimensions::value_type;
 
-    explicit constexpr Quantity(T x) : m_value(x) {}
+    explicit constexpr metaQuantity(T x) : m_value(x) {}
     inline constexpr T value() const { return m_value; }
 
 private:
@@ -67,33 +64,33 @@ private:
 };
 
 template <class T, class D>
-constexpr Quantity<T, D>
-operator+(const Quantity<T, D> &x, const Quantity<T, D> &y)
+constexpr metaQuantity<T, D>
+operator+(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
 {
-    return Quantity<T, D>(x.value() + y.value());
+    return metaQuantity<T, D>(x.value() + y.value());
 }
 
 template <class T, class D>
-constexpr Quantity<T, D>
-operator-(const Quantity<T, D> &x, const Quantity<T, D> &y)
+constexpr metaQuantity<T, D>
+operator-(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
 {
-    return Quantity<T, D>(x.value() - y.value());
+    return metaQuantity<T, D>(x.value() - y.value());
 }
 
 template <class T, class D1, class D2>
-constexpr Quantity<T, typename tyTransform<D1, D2, tyAdd>::type>
-operator*(const Quantity<T, D1> &x, const Quantity<T, D2> &y)
+constexpr metaQuantity<T, typename qTransform<D1, D2, qDimAdd>::type>
+operator*(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
 {
-    using dim = typename tyTransform<D1, D2, tyAdd>::type;
-    return Quantity<T, dim>(x.value() * y.value());
+    using dim = typename qTransform<D1, D2, qDimAdd>::type;
+    return metaQuantity<T, dim>(x.value() * y.value());
 }
 
 template <class T, class D1, class D2>
-constexpr Quantity<T, typename tyTransform<D1, D2, tySub>::type>
-operator/(const Quantity<T, D1> &x, const Quantity<T, D2> &y)
+constexpr metaQuantity<T, typename qTransform<D1, D2, qDimSub>::type>
+operator/(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
 {
-    using dim = typename tyTransform<D1, D2, tySub>::type;
-    return Quantity<T, dim>(x.value() / y.value());
+    using dim = typename qTransform<D1, D2, qDimSub>::type;
+    return metaQuantity<T, dim>(x.value() / y.value());
 }
 
 __ALG__META__END__

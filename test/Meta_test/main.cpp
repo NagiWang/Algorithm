@@ -2,19 +2,20 @@
 
 int main()
 {
-    // static_assert(std::is_same<alg::Tensor<double, 1, 2, 3>::type, double[3][2][1]>::value, "Hi~");
-    // static_assert(std::is_same<alg::makep_tensor_t<int, 3, 4, 5>, int[5][4][3]>::value, "Hi~");
+    using namespace alg::meta;
 
-    using a = alg::meta::tyDim<int, 0, 1, 1, 0, 0, 0, 0>;
-    using b = alg::meta::tyDim<int, 0, 1, 0, 1, 0, 0, 0>;
+    using a = qDim<int, 0, 1, 1, 0, 0, 0, 0>;
+    using b = qDim<int, 0, 1, 0, 1, 0, 0, 0>;
 
-    using c = typename alg::meta::tyTransform_t<a, b, alg::meta::tySub>;
+    using c =  qTransform_t<a, b, qDimSub>;
+    using d = qDim<int, 1, 2, 3>;
+    d n{};
 
-    constexpr auto d = alg::meta::Quantity<double, alg::meta::mass>(5);
-    constexpr auto e = alg::meta::Quantity<double, alg::meta::time>(9);
-    constexpr auto f = d * e;
+    constexpr auto e = metaQuantity<double, qmass>(5);
+    constexpr auto f = metaQuantity<double, qtime>(9);
+    constexpr auto g = e * f;
 
-    // using c = decltype(alg::Mul<a>(a{},b{}));
-    static_assert(std::is_same<c, alg::meta::mass>::value, "Hi~");
-    static_assert(f.value(), "Hi~");
+
+    static_assert(std::is_same<c, qmass>::value, "Hi~");
+    static_assert(!g.value(), "Hi~");
 }

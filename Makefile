@@ -34,7 +34,7 @@ build/meta_main.out: test/Meta_test/main.cpp
 	$(CC) "$<" $(STD) $(OO) -o "$@"
 
 clean:
-	rm -rf build
+	rm -r build/*
 	find . -name "*.o"    | xargs rm -f
 	find . -name "*.out"  | xargs rm -f
 	find . -name "*.obj"  | xargs rm -f
