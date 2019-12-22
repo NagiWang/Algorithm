@@ -11,4 +11,7 @@ struct same_size_check<D, D>
 {
 };
 
+template <auto... T>
+struct false_type;
+
 __ALG__META__END__

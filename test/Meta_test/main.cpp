@@ -9,7 +9,7 @@ int main()
 
     using c =  qTransform_t<a, b, qDimSub>;
     using d = qDim<int, 1, 2, 3>;
-    d n{};
+    // d n{};
 
     constexpr auto e = metaQuantity<double, qmass>(5);
     constexpr auto f = metaQuantity<double, qtime>(9);

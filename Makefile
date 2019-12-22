@@ -9,6 +9,7 @@ all:BUILD \
 CC=clang++-9
 OO=-O2
 STD=-std=c++17
+CFLAGS=-Wall
 
 BUILD:
 	mkdir build
@@ -19,19 +20,19 @@ BUILD:
 
 
 build/sort_main.out: test/Sort_test/main.cpp
-	$(CC) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
 
 build/heap_main.out: test/Heap_test/main.cpp
-	$(CC) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
 
 build/queue_main.out: test/Queue_test/main.cpp
-	$(CC) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
 
 build/math_main.out: test/Math_test/main.cpp
-	$(CC) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
 
 build/meta_main.out: test/Meta_test/main.cpp
-	$(CC) "$<" $(STD) $(OO) -o "$@"
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
 
 clean:
 	rm -r build/*
