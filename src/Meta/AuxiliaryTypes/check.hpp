@@ -1,7 +1,7 @@
 #pragma once
 #include "../Headers.hpp"
 
-__ALG__META__BEGIN__
+__ALG__MAT__BEGIN__
 
 template <std::size_t D, std::size_t B>
 struct same_size_check;
@@ -14,4 +14,4 @@ struct same_size_check<D, D>
 template <auto... T>
 struct false_type;
 
-__ALG__META__END__
+__ALG__MAT__END__

@@ -16,6 +16,6 @@ int main()
     constexpr auto g = e * f;
 
 
-    static_assert(std::is_same<c, qmass>::value, "Hi~");
+    static_assert(std::is_same_v<c, qmass>, "Hi~");
     static_assert(!g.value(), "Hi~");
 }

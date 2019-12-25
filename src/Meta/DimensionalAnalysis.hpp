@@ -7,7 +7,7 @@ __ALG__META__BEGIN__
 
 template <class T, T... Args>
 using qDim = typename std::enable_if_t<(sizeof...(Args) == 7), // !The qDim's dimension will be 7
-                                       same_type_array<T, Args...>>;
+                                       metatool::same_type_array<T, Args...>>;
 
 typedef qDim<int, 1, 0, 0, 0, 0, 0, 0> qmass;
 typedef qDim<int, 0, 1, 0, 0, 0, 0, 0> qlength;
@@ -62,33 +62,27 @@ private:
 };
 
 template <class T, class D>
-constexpr metaQuantity<T, D>
-operator+(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
+constexpr decltype(auto) operator+(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
 {
     return metaQuantity<T, D>(x.value() + y.value());
 }
 
 template <class T, class D>
-constexpr metaQuantity<T, D>
-operator-(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
+constexpr decltype(auto) operator-(const metaQuantity<T, D> &x, const metaQuantity<T, D> &y)
 {
     return metaQuantity<T, D>(x.value() - y.value());
 }
 
 template <class T, class D1, class D2>
-constexpr metaQuantity<T, typename qTransform<D1, D2, qDimAdd>::type>
-operator*(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
+constexpr decltype(auto) operator*(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
 {
-    using dim = typename qTransform<D1, D2, qDimAdd>::type;
-    return metaQuantity<T, dim>(x.value() * y.value());
+    return metaQuantity<T, qTransform_t<D1, D2, qDimAdd>>(x.value() * y.value());
 }
 
 template <class T, class D1, class D2>
-constexpr metaQuantity<T, typename qTransform<D1, D2, qDimSub>::type>
-operator/(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
+constexpr decltype(auto) operator/(const metaQuantity<T, D1> &x, const metaQuantity<T, D2> &y)
 {
-    using dim = typename qTransform<D1, D2, qDimSub>::type;
-    return metaQuantity<T, dim>(x.value() / y.value());
+    return metaQuantity<T, qTransform_t<D1, D2, qDimSub>>(x.value() / y.value());
 }
 
 __ALG__META__END__

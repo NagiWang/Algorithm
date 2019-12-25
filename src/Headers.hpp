@@ -44,8 +44,21 @@
 	;
 #endif
 
+#ifndef __ALG__MAT__BEGIN__
+#define __ALG__MAT__BEGIN__  \
+	namespace alg::metatools \
+	{
+#endif
+
+#ifndef __ALG__MAT__END__
+#define __ALG__MAT__END__ \
+	}                     \
+	;
+#endif
+
 __ALG__BEGIN__
 
+#define static_constexpr static constexpr
 // ******************************
 // ******* Console Colors *******
 // ******************************
