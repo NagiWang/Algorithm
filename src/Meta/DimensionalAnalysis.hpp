@@ -1,13 +1,13 @@
 #pragma once
 #include "../Headers.hpp"
-#include "Array.hpp"
-#include "Check.hpp"
+#include "AuxiliaryTypes/ArrayType.hpp"
+#include "AuxiliaryTypes/Check.hpp"
 
 __ALG__META__BEGIN__
 
 template <class T, T... Args>
 using qDim = typename std::enable_if_t<(sizeof...(Args) == 7), // !The qDim's dimension will be 7
-                                       metatool::same_type_array<T, Args...>>;
+                                       metatools::same_type_array<T, Args...>>;
 
 typedef qDim<int, 1, 0, 0, 0, 0, 0, 0> qmass;
 typedef qDim<int, 0, 1, 0, 0, 0, 0, 0> qlength;
