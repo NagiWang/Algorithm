@@ -2,64 +2,62 @@
 
 __ALG__BEGIN__
 
-template <typename _T, std::size_t _N>
+template <typename T, std::size_t N>
 struct add_np
 {
-    using type = _T[_N];
+    using type = T[N];
 };
 
-template <typename _T, std::size_t _N>
-using add_np_t = typename add_np<_T, _N>::type;
+template <typename T, std::size_t N>
+using add_np_t = typename add_np<T, N>::type;
 
-template <typename _TensorType, std::size_t _arg, std::size_t... _args>
+template <typename TensorType, std::size_t arg, std::size_t... args>
 struct makep_tensor
 {
-    using type = typename makep_tensor<add_np_t<_TensorType, _arg>, _args...>::type;
+    using args = typename makep_tensor<add_np_t<TensorType, arg>, args...>::args;
 };
 
-template <typename _TensorType, std::size_t _arg>
-struct makep_tensor<_TensorType, _arg>
+template <typename TensorType, std::size_t arg>
+struct makep_tensor<TensorType, arg>
 {
-    using type = add_np_t<_TensorType, _arg>;
+    using type = add_np_t<TensorType, arg>;
 };
 
-template <typename _TensorType, std::size_t... _args>
-using makep_tensor_t = typename makep_tensor<_TensorType, _args...>::type;
+template <typename TensorType, std::size_t... args>
+using makep_tensor_t = typename makep_tensor<TensorType, args...>::args;
 
-template <typename _TensorType, std::size_t _N>
-struct _AddPointer
+template <typename TensorType, std::size_t N>
+struct AddPointer
 {
-    using type = typename std::add_pointer<typename _AddPointer<_TensorType, _N - 1>::type>::type;
+    using type = typename std::add_pointer<typename AddPointer<TensorType, _N - 1>::type>::type;
 };
 
-template <typename _TensorType>
-struct _AddPointer<_TensorType, 0>
+template <typename TensorType>
+struct AddPointer<TensorType, 0>
 {
-    using type = typename std::remove_reference_t<_TensorType>;
+    using type = typename std::remove_reference_t<TensorType>;
 };
 
-template <typename _TensorType, std::size_t... _Dims>
+template <typename TensorType, std::size_t... Dims>
 struct ArrayPtr
 {
-    using type = typename _AddPointer<_TensorType, sizeof...(_Dims)>::type;
+    using type = typename AddPointer<TensorType, sizeof...(Dims)>::type;
 };
 
-template <typename _TensorType, std::size_t... _Dims>
-using ArrayPtr_t = typename ArrayPtr<_TensorType, _Dims...>::type;
+template <typename TensorType, std::size_t... Dims>
+using ArrayPtr_t = typename ArrayPtr<TensorType, Dims...>::type;
 
-template <typename _TensorType, std::size_t... _Dims>
+template <typename TensorType, std::size_t... Dims>
 class Tensor
 {
 public:
-    constexpr Tensor() : _dimension(sizeof...(_Dims)) {}
-    using type = makep_tensor_t<_TensorType, _Dims...>;
-    decltype(auto) get_raw() { return &_data; }
+    constexpr Tensor() : dimension(sizeof...(Dims)) {}
+    using type = makep_tensor_t<TensorType, Dims...>;
+    decltype(auto) get_raw() { return &data; }
 
 private:
-    std::size_t _dimension;
-    type _data;
+    std::size_t dimension;
+    type data;
 };
-
-
 
 __ALG__END__

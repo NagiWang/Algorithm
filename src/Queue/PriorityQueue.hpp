@@ -12,9 +12,9 @@ private:
 	std::vector<std::pair<_elemType, _keyType>> data;
 
 public:
-	PriorityQueue() : data(_size), count(0) {}
+	constexpr PriorityQueue() : count(0), data(_size) {}
 
-	PriorityQueue(std::initializer_list<_elemType> &&init_list) : data(_size), count(0)
+	constexpr PriorityQueue(std::initializer_list<_elemType> &&init_list) : count(0), data(_size)
 	{
 		for (auto value : init_list)
 		{

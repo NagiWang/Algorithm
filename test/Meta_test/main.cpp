@@ -8,7 +8,7 @@ int main()
     using b = qDim<int, 0, 1, 0, 1, 0, 0, 0>;
 
     using c =  qTransform_t<a, b, qDimSub>;
-    using d = qDim<int, 1, 2, 3>;
+    // using d = qDim<int, 1, 2, 3>;
     // d n{};
 
     constexpr auto e = metaQuantity<double, qmass>(5);
@@ -16,6 +16,6 @@ int main()
     constexpr auto g = e * f;
 
 
-    static_assert(std::is_same_v<c, qmass>, "Hi~");
-    static_assert(!g.value(), "Hi~");
+    static_assert(!std::is_same_v<c, qmass>, "Hi~");
+    static_assert(g.value(), "Hi~");
 }

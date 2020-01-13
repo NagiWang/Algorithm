@@ -1,23 +1,19 @@
-all:BUILD \
-    build/sort_main.out \
-	build/heap_main.out \
-	build/queue_main.out \
-	build/math_main.out  \
-	build/meta_main.out
-
-
 CC=clang++-9
 OO=-O2
 STD=-std=c++17
 CFLAGS=-Wall
 
-BUILD:
-	mkdir build
-
+# BUILD:
+# 	mkdir build
 
 # Algorithm: Algorithm.hpp
 # 	$(CC) "$<" $(STD) $(OO)
 
+all:build/sort_main.out \
+	build/heap_main.out \
+	build/queue_main.out \
+	build/math_main.out  \
+	build/meta_main.out
 
 build/sort_main.out: test/Sort_test/main.cpp
 	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
@@ -33,6 +29,10 @@ build/math_main.out: test/Math_test/main.cpp
 
 build/meta_main.out: test/Meta_test/main.cpp
 	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
+
+mpltest: src/Meta/AuxiliaryTypes/mpltest.cpp
+	$(CC) "$<" $(STD) $(CFLAGS) $(OO) -o "$@"
+
 
 clean:
 	rm -r build/*

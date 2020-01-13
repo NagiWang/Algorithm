@@ -112,7 +112,7 @@ void array_print(const T &array)
 }
 
 // *********************************
-// *** Fuctions for return value ***
+// *** Functions for return value ***
 // *********************************
 /**
  * @brief Return directly to its value
