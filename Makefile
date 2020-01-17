@@ -1,6 +1,6 @@
 CC=clang++-9
 OO=-O2
-STD=-std=c++17
+STD=-std=c++17 -stdlib=libc++
 CFLAGS=-Wall
 
 # BUILD:

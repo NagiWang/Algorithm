@@ -44,5 +44,5 @@ int main()
 	// 	std::forward_as_tuple(10, 'a'));
 	// std::cout << "Piecewise constructed: "
 	// 		  << p6.first << ", " << p6.second << '\n';
-	static_assert(alg::metatools::iBinary<1100110> == 0, " Binary\n");
+	static_assert(alg::metatools::iBinary_v<1100112> != 102, " Binary\n");
 }
