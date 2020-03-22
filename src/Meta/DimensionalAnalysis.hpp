@@ -22,7 +22,6 @@ struct qTransform
 {
 };
 
-
 template <template <typename Td, Td... Args1> class T1,
           template <typename Td, Td... Args2> class T2,
           typename Td,
@@ -36,8 +35,6 @@ struct qTransform<T1<Td, Args1...>, T2<Td, Args2...>, Func>
 
 template <typename T1, typename T2, typename Func>
 using qTransform_t = typename qTransform<T1, T2, Func>::type;
-
-
 
 struct qDimAdd
 {

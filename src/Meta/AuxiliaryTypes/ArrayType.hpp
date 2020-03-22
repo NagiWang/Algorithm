@@ -10,4 +10,5 @@ struct same_type_array
     using type = same_type_array<T, Args...>;
 };
 
+
 __ALG__MAT__END__
